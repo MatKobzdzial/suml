@@ -1,6 +1,5 @@
-echo "
-
-install: pip install --upgrade pip
+install:
+	pip install --upgrade pip
 
 format:
 	black *.py
@@ -11,8 +10,6 @@ train:
 eval:
 	echo "## Model Metrics" > report.md
 	cat ./Results/metrics.txt >> report.md
-
-	echo '\n## Confusion Matrix Plot' >> report.md
+	printf "\n## Confusion Matrix Plot\n" >> report.md
 	echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
-
 	cml comment create report.md
