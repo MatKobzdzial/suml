@@ -1,12 +1,8 @@
 install:
-	pip install --upgrade pip
-
 format:
 	black *.py
-
 train:
 	python train.py
-
 eval:
 	echo "## Model Metrics" > report.md
 	cat ./Results/metrics.txt >> report.md
